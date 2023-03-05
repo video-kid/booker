@@ -44,13 +44,15 @@ const EventsList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>name here</td>
-            <td>
-              <Link to={`${666}/edit`}>Edit</Link>
-              <button>remove</button>
-            </td>
-          </tr>
+          {eventsList.map(({ name, id }) => (
+            <tr key={id}>
+              <td>{name}</td>
+              <td>
+                <Link to={`${id}/edit`}>Edit</Link>
+                <button>remove</button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </section>
