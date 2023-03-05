@@ -25,12 +25,12 @@ const CreateEvent = () => {
           />
         </div>
         <div>
-          <label htmlFor="localisation">localisation</label>
+          <label htmlFor="localization">localization</label>
           <input
             type="text"
-            placeholder="localisation"
-            id="localisation"
-            {...register("localisation", { required: false })}
+            placeholder="localization"
+            id="localization"
+            {...register("localization", { required: false })}
           />
         </div>
         <div>
