@@ -7,7 +7,7 @@ import { eventProps } from "../../types/events";
 const event: eventProps = {
   id: "888",
   name: "ev1 20.03-20.03",
-  localisation: "bbb",
+  localization: "bbb",
   start: "1679313581000",
   end: "1679313581001",
   description: "bbbb lorem ipsum dolor sit am",
@@ -40,19 +40,40 @@ const EventsList = () => {
         <thead>
           <tr>
             <td>name</td>
+            <td>localization</td>
+            <td>start</td>
+            <td>end</td>
+            <td>accommodation</td>
+            <td>transport</td>
             <td>actions</td>
           </tr>
         </thead>
         <tbody>
-          {eventsList.map(({ name, id }) => (
-            <tr key={id}>
-              <td>{name}</td>
-              <td>
-                <Link to={`${id}/edit`}>Edit</Link>
-                <button>remove</button>
-              </td>
-            </tr>
-          ))}
+          {eventsList.map(
+            ({
+              name,
+              id,
+              localization,
+              start,
+              end,
+              need_accommodation,
+              hotel_name,
+              need_transport,
+            }) => (
+              <tr key={id}>
+                <td>{name}</td>
+                <td>{localization}</td>
+                <td>{start}</td>
+                <td>{end}</td>
+                <td>{need_accommodation ? hotel_name : "n/a"}</td>
+                <td>{need_transport ? "route" : "n/a"}</td>
+                <td>
+                  <Link to={`${id}/edit`}>Edit</Link>
+                  <button>remove</button>
+                </td>
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     </section>

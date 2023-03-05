@@ -7,7 +7,7 @@ const eventsList: Array<eventProps> = [
   {
     id: "222",
     name: "ev1 20.03-20.04",
-    localisation: "aaa",
+    localization: "aaa",
     start: "1679313581000",
     end: "1681991981000",
     description: "lorem ipsum dolor sit am",

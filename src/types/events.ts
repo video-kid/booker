@@ -1,7 +1,7 @@
 export type eventProps = {
   id: string;
   name: string;
-  localisation: string;
+  localization: string;
   start: string;
   end: string;
   description: string;
