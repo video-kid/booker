@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../hooks/state/useAppSelector";
-import { addEvent, events } from "../../state/slice/events/eventsSlice";
+import { addEvent, events } from "../../state/slice/events/slice";
 import { useAppDispatch } from "../../hooks/state/useAppDispatch";
 import { eventProps } from "../../types/events";
 

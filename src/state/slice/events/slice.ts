@@ -1,6 +1,7 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { eventProps } from "../../../types/events";
 import { RootState } from "../../store";
+import { eventReducers } from "./reducers/reducer";
 
 const eventsList: Array<eventProps> = [
   {
@@ -29,11 +30,7 @@ const initialState: EventsState = {
 export const eventSlice = createSlice({
   name: "events",
   initialState,
-  reducers: {
-    addEvent: (state, action: PayloadAction<eventProps>) => {
-      state.list = [...state.list, action.payload];
-    },
-  },
+  reducers: eventReducers,
 });
 
 export const { addEvent } = eventSlice.actions;
