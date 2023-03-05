@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../../hooks/state/useAppSelector";
+import { addEvent, events } from "../../state/slice/events/eventsSlice";
+import { useAppDispatch } from "../../hooks/state/useAppDispatch";
+import { eventProps } from "../../types/events";
+
+const event: eventProps = {
+  id: "888",
+  name: "ev1 20.03-20.03",
+  localisation: "bbb",
+  start: "1679313581000",
+  end: "1679313581001",
+  description: "bbbb lorem ipsum dolor sit am",
+  need_accommodation: true,
+  hotel_adress: "ccc",
+  hotel_name: "ddd",
+  hotel_reservation_number: "333",
+  need_transport: false,
+};
 
 const EventsList = () => {
+  const eventsList = useAppSelector(events);
+  const dispatch = useAppDispatch();
+
+  console.log(eventsList);
   return (
     <section>
       <header>
@@ -13,6 +35,7 @@ const EventsList = () => {
           </ul>
         </nav>
       </header>
+      <button onClick={() => dispatch(addEvent(event))}>Add event</button>
       <table>
         <thead>
           <tr>
