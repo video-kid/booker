@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 const CreateEvent = () => {
   const {
@@ -12,90 +13,93 @@ const CreateEvent = () => {
 
   // console.log(errors);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label htmlFor="name">name</label>
-        <input
-          type="text"
-          placeholder="name"
-          id="name"
-          {...register("name", { required: true })}
-        />
-      </div>
-      <div>
-        <label htmlFor="localisation">localisation</label>
-        <input
-          type="text"
-          placeholder="localisation"
-          id="localisation"
-          {...register("localisation", { required: true })}
-        />
-      </div>
-      <div>
-        <label htmlFor="start">start</label>
-        <input
-          type="text"
-          placeholder="start"
-          {...register("start", { required: true })}
-        />
-      </div>
-      <div>
-        <label htmlFor="end">end</label>
-        <input type="text" placeholder="end" {...register("end", {})} />
-      </div>
-      <div>
-        <label htmlFor="description">description</label>
-        <input
-          type="text"
-          placeholder="description"
-          {...register("description", {})}
-        />
-      </div>
-      <div>
-        <label htmlFor="need_accommodation">need hotel</label>
-        <input
-          type="checkbox"
-          placeholder="need_accommodation"
-          {...register("need_accommodation", {})}
-        />
-      </div>
-      <div>
-        <label htmlFor="hotel_adress">hotel_adress</label>
-        <input
-          type="text"
-          placeholder="hotel_adress"
-          {...register("hotel_adress", {})}
-        />
-      </div>
-      <div>
-        <label htmlFor="hotel_name">hotel_name</label>
-        <input
-          type="text"
-          placeholder="hotel_name"
-          {...register("hotel_name", {})}
-        />
-      </div>
-      <div>
-        <label htmlFor="hotel_reservation_number">
-          hotel_reservation_number
-        </label>
-        <input
-          type="text"
-          placeholder="hotel_reservation_number"
-          {...register("hotel_reservation_number", {})}
-        />
-      </div>
-      <div>
-        <label htmlFor="need_transport">need_transport</label>
-        <input
-          type="checkbox"
-          placeholder="need_transport"
-          {...register("need_transport", {})}
-        />
-      </div>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div>
+          <label htmlFor="name">name</label>
+          <input
+            type="text"
+            placeholder="name"
+            id="name"
+            {...register("name", { required: false })}
+          />
+        </div>
+        <div>
+          <label htmlFor="localisation">localisation</label>
+          <input
+            type="text"
+            placeholder="localisation"
+            id="localisation"
+            {...register("localisation", { required: false })}
+          />
+        </div>
+        <div>
+          <label htmlFor="start">start</label>
+          <input
+            type="text"
+            placeholder="start"
+            {...register("start", { required: false })}
+          />
+        </div>
+        <div>
+          <label htmlFor="end">end</label>
+          <input type="text" placeholder="end" {...register("end", {})} />
+        </div>
+        <div>
+          <label htmlFor="description">description</label>
+          <input
+            type="text"
+            placeholder="description"
+            {...register("description", {})}
+          />
+        </div>
+        <div>
+          <label htmlFor="need_accommodation">need hotel</label>
+          <input
+            type="checkbox"
+            placeholder="need_accommodation"
+            {...register("need_accommodation", {})}
+          />
+        </div>
+        <div>
+          <label htmlFor="hotel_adress">hotel_adress</label>
+          <input
+            type="text"
+            placeholder="hotel_adress"
+            {...register("hotel_adress", {})}
+          />
+        </div>
+        <div>
+          <label htmlFor="hotel_name">hotel_name</label>
+          <input
+            type="text"
+            placeholder="hotel_name"
+            {...register("hotel_name", {})}
+          />
+        </div>
+        <div>
+          <label htmlFor="hotel_reservation_number">
+            hotel_reservation_number
+          </label>
+          <input
+            type="text"
+            placeholder="hotel_reservation_number"
+            {...register("hotel_reservation_number", {})}
+          />
+        </div>
+        <div>
+          <label htmlFor="need_transport">need_transport</label>
+          <input
+            type="checkbox"
+            placeholder="need_transport"
+            {...register("need_transport", {})}
+          />
+        </div>
 
-      <button type="submit">send</button>
-    </form>
+        <button type="submit">send</button>
+      </form>
+      <Link to="/">cancel</Link>
+    </>
   );
 };
 
