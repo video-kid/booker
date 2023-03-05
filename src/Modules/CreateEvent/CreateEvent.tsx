@@ -1,20 +1,23 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { eventProps } from "../../types/events";
 
-const CreateEvent = () => {
+type CreateEventProps = {
+  submitHandler: SubmitHandler<eventProps>;
+};
+
+const CreateEvent = ({ submitHandler }: CreateEventProps) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data: unknown) => console.log(data);
+  } = useForm<eventProps>();
 
   // console.log(errors);
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(submitHandler)}>
         <div>
           <label htmlFor="name">name</label>
           <input
